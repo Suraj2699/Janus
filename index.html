@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Janus | Strategic Execution for Founders</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- UPDATED: Tailwind CSS v4 via jsDelivr -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
@@ -69,6 +70,13 @@
             from { opacity: 0; transform: translateY(5px); }
             to { opacity: 1; transform: translateY(0); }
         }
+        
+        /* Dragging Styles */
+        .task-item.dragging {
+            opacity: 0.5;
+            background-color: #f8fafc;
+            border-style: dashed;
+        }
     </style>
 </head>
 <body class="selection:bg-indigo-100 selection:text-indigo-900">
@@ -79,7 +87,8 @@
             <div class="flex justify-between items-center">
                 <div class="flex items-center space-x-3 group cursor-pointer">
                     <div class="bg-indigo-600 p-2 rounded-lg shadow-lg shadow-slate-200 group-hover:scale-105 transition-transform">
-                        <i data-lucide="zap" class="w-5 h-5 text-white"></i>
+                        <!-- UPDATED: size-5 -->
+                        <i data-lucide="zap" class="size-5 text-white"></i>
                     </div>
                     <span class="text-lg font-bold tracking-tight text-slate-900">Janus</span>
                 </div>
@@ -87,7 +96,7 @@
                     <a href="#problem" class="text-sm font-semibold text-slate-500 hover:text-indigo-600 transition-colors">The Problem</a>
                     <a href="#method" class="text-sm font-semibold text-slate-500 hover:text-indigo-600 transition-colors">Hierarchy</a>
                     <a href="#faq" class="text-sm font-semibold text-slate-500 hover:text-indigo-600 transition-colors">FAQ</a>
-                    <button class="bg-slate-900 text-white text-sm font-bold px-6 py-3 rounded-xl hover:bg-slate-800 transition-all active:scale-95 shadow-lg shadow-slate-200/50 btn-shimmer">
+                    <button class="bg-slate-900 text-white text-sm font-bold px-6 py-3 rounded-xl hover:bg-slate-800 transition-all active:scale-95 shadow-lg shadow-slate-200/50 btn-shimmer cursor-pointer">
                         Start Your Day
                     </button>
                 </div>
@@ -107,14 +116,17 @@
             <div class="text-center max-w-4xl mx-auto flex flex-col items-center">
                 
                 <div class="inline-flex items-center space-x-2 px-3 py-1.5 bg-white border border-slate-200 rounded-full mb-8">
-                    <span class="relative flex h-2 w-2">
-                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                    <!-- UPDATED: size-2 -->
+                    <span class="relative flex size-2">
+                        <!-- UPDATED: size-full -->
+                        <span class="animate-ping absolute inline-flex size-full rounded-full bg-emerald-400 opacity-75"></span>
+                        <!-- UPDATED: size-2 -->
+                        <span class="relative inline-flex rounded-full size-2 bg-emerald-500"></span>
                     </span>
                     <span class="text-xs font-bold uppercase tracking-widest text-emerald-600">Focus Mode: Active</span>
                 </div>
-
-                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter leading-[1.2] mb-8 text-slate-900">
+                
+                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter !leading-[1.2] mb-8 text-slate-900">
                     Turn long-term goals into <br />
                     <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-indigo-400">focused daily execution.</span>
                 </h1>
@@ -124,15 +136,17 @@
                 </p>
 
                 <div class="flex items-center space-x-6 text-xs font-bold uppercase tracking-widest text-slate-400 mb-10">
-                    <span class="flex items-center"><i data-lucide="check" class="w-3.5 h-3.5 mr-1.5 text-indigo-500"></i> No calendars</span>
-                    <span class="flex items-center"><i data-lucide="check" class="w-3.5 h-3.5 mr-1.5 text-indigo-500"></i> No teams</span>
-                    <span class="flex items-center"><i data-lucide="check" class="w-3.5 h-3.5 mr-1.5 text-indigo-500"></i> No project overhead</span>
+                    <!-- UPDATED: size-3.5 -->
+                    <span class="flex items-center"><i data-lucide="check" class="size-3.5 mr-1.5 text-indigo-500"></i> No calendars</span>
+                    <span class="flex items-center"><i data-lucide="check" class="size-3.5 mr-1.5 text-indigo-500"></i> No teams</span>
+                    <span class="flex items-center"><i data-lucide="check" class="size-3.5 mr-1.5 text-indigo-500"></i> No project overhead</span>
                 </div>
 
                 <div class="flex flex-col sm:flex-row justify-center items-center gap-4 w-full sm:w-auto mb-20">
-                    <button class="group w-full sm:w-auto px-8 py-4 bg-slate-900 text-white rounded-xl font-bold text-lg hover:bg-slate-800 transition-all shadow-xl shadow-slate-200/50 flex items-center justify-center">
+                    <button class="group w-full sm:w-auto px-8 py-4 bg-slate-900 text-white rounded-xl font-bold text-lg hover:bg-slate-800 transition-all shadow-xl shadow-slate-200/50 flex items-center justify-center cursor-pointer">
                         Start Your Day
-                        <i data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        <!-- UPDATED: size-4 -->
+                        <i data-lucide="arrow-right" class="size-4 ml-2 group-hover:translate-x-1 transition-transform"></i>
                     </button>
                 </div>
 
@@ -141,17 +155,19 @@
 
                     <div class="relative bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden">
                         <!-- Window Chrome -->
-                        <div class="border-b border-slate-100 bg-slate-50 px-5 py-3 flex items-center justify-between">
+                        <div class="flex justify-between border-b border-slate-100 bg-slate-50 px-5 py-3 flex items-center">
                             <div class="flex items-center space-x-2">
-                                <div class="w-3 h-3 rounded-full bg-rose-400"></div>
-                                <div class="w-3 h-3 rounded-full bg-amber-400"></div>
-                                <div class="w-3 h-3 rounded-full bg-green-400"></div>
+                                <!-- UPDATED: size-3 -->
+                                <div class="size-3 rounded-full bg-rose-400"></div>
+                                <div class="size-3 rounded-full bg-amber-400"></div>
+                                <div class="size-3 rounded-full bg-green-400"></div>
                             </div>
                             <div class="flex items-center space-x-2 px-3 py-1 bg-white border border-slate-200 rounded-md shadow-sm">
-                                <i data-lucide="lock" class="w-3 h-3 text-slate-400"></i>
+                                <!-- UPDATED: size-3 -->
+                                <i data-lucide="lock" class="size-3 text-slate-400"></i>
                                 <span class="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Janus // Command Center</span>
                             </div>
-                            <div class="w-10"></div>
+                            <div class="w-0 sm:w-10"></div>
                         </div>
 
                         <!-- App Layout -->
@@ -163,21 +179,25 @@
                                     <div class="mt-4 space-y-1" id="hero-sidebar-nav">
                                         <!-- Active Item (Default) -->
                                         <div id="hero-nav-focus" onclick="switchHeroView('focus')" class="hero-nav-item flex items-center space-x-3 px-3 py-2 bg-white border border-slate-200 text-indigo-700 rounded-lg font-bold text-sm shadow-sm cursor-pointer transition-all">
-                                            <i data-lucide="zap" class="w-4 h-4"></i>
+                                            <!-- UPDATED: size-4 -->
+                                            <i data-lucide="zap" class="size-4"></i>
                                             <span>Today's Focus</span>
                                         </div>
                                         
                                         <!-- Inactive Items -->
                                         <div id="hero-nav-goals" onclick="switchHeroView('goals')" class="hero-nav-item flex items-center space-x-3 px-3 py-2 text-slate-500 hover:text-slate-900 hover:bg-white/50 rounded-lg font-medium text-sm transition-colors cursor-pointer border border-transparent">
-                                            <i data-lucide="target" class="w-4 h-4"></i>
+                                            <!-- UPDATED: size-4 -->
+                                            <i data-lucide="target" class="size-4"></i>
                                             <span>Goals</span>
                                         </div>
                                         <div id="hero-nav-projects" onclick="switchHeroView('projects')" class="hero-nav-item flex items-center space-x-3 px-3 py-2 text-slate-500 hover:text-slate-900 hover:bg-white/50 rounded-lg font-medium text-sm transition-colors cursor-pointer border border-transparent">
-                                            <i data-lucide="layers" class="w-4 h-4"></i>
+                                            <!-- UPDATED: size-4 -->
+                                            <i data-lucide="layers" class="size-4"></i>
                                             <span>Projects</span>
                                         </div>
                                         <div id="hero-nav-ideas" onclick="switchHeroView('ideas')" class="hero-nav-item flex items-center space-x-3 px-3 py-2 text-slate-500 hover:text-slate-900 hover:bg-white/50 rounded-lg font-medium text-sm transition-colors cursor-pointer border border-transparent">
-                                            <i data-lucide="lightbulb" class="w-4 h-4"></i>
+                                            <!-- UPDATED: size-4 -->
+                                            <i data-lucide="lightbulb" class="size-4"></i>
                                             <span>Ideas</span>
                                         </div>
                                     </div>
@@ -201,21 +221,24 @@
                                         <div class="text-left">
                                             <h2 class="text-2xl font-black text-slate-900 tracking-tight mb-2">Thursday, Nov 14</h2>
                                             <p class="text-sm font-medium text-slate-500 flex items-center">
-                                                <i data-lucide="shield-check" class="w-4 h-4 mr-2 text-emerald-500"></i>
+                                                <!-- UPDATED: size-4 -->
+                                                <i data-lucide="shield-check" class="size-4 mr-2 text-emerald-500"></i>
                                                 <span class="text-slate-600">Manual Priority Mode Active</span>
                                             </p>
                                         </div>
-                                        <button class="text-xs font-bold bg-slate-900 text-white px-4 py-2 rounded-lg hover:bg-slate-800 transition-colors">
+                                        <button class="text-xs font-bold bg-slate-900 text-white px-4 py-2 rounded-lg hover:bg-slate-800 transition-colors cursor-pointer">
                                             + Add Task
                                         </button>
                                     </div>
 
-                                    <div class="space-y-4">
+                                    <div class="space-y-4" id="hero-focus-task-list">
                                         <!-- Active Task 1 -->
-                                        <div class="group flex items-center p-4 bg-white border border-indigo-200 rounded-xl shadow-sm hover:shadow-md hover:border-indigo-400 transition-all cursor-grab active:cursor-grabbing relative overflow-hidden">
+                                        <div class="task-item group flex items-center p-4 bg-white border border-indigo-200 rounded-xl shadow-sm hover:shadow-md hover:border-indigo-400 transition-all cursor-grab active:cursor-grabbing relative overflow-hidden" draggable="true">
                                             <div class="absolute left-0 top-0 bottom-0 w-1 bg-indigo-500"></div>
-                                            <div class="w-6 h-6 rounded border-2 border-indigo-200 mr-4 flex items-center justify-center group-hover:bg-indigo-50 transition-colors cursor-pointer">
-                                                <i data-lucide="check" class="w-3.5 h-3.5 text-indigo-600 opacity-0 group-hover:opacity-100"></i>
+                                            <!-- UPDATED: size-6 -->
+                                            <div class="task-checkbox size-6 rounded border-2 border-indigo-200 mr-4 flex items-center justify-center group-hover:bg-indigo-50 transition-colors cursor-pointer">
+                                                <!-- UPDATED: size-3.5 -->
+                                                <i data-lucide="check" class="size-3.5 text-indigo-600 opacity-0 group-hover:opacity-100"></i>
                                             </div>
                                             <div class="text-left flex-1">
                                                 <span class="block text-sm font-bold text-slate-900">Refine Strategic Roadmap for Q1</span>
@@ -224,13 +247,18 @@
                                                 </div>
                                             </div>
                                             <div class="text-slate-300 group-hover:text-slate-400 transition-colors">
-                                                <i data-lucide="grip-vertical" class="w-5 h-5"></i>
+                                                <!-- UPDATED: size-5 -->
+                                                <i data-lucide="grip-vertical" class="size-5"></i>
                                             </div>
                                         </div>
 
                                         <!-- Active Task 2 -->
-                                        <div class="group flex items-center p-4 bg-white border border-slate-200 rounded-xl hover:border-emerald-400 transition-all cursor-grab active:cursor-grabbing">
-                                            <div class="w-6 h-6 rounded border-2 border-slate-200 mr-4 flex items-center justify-center group-hover:border-emerald-400 transition-colors cursor-pointer"></div>
+                                        <div class="task-item group flex items-center p-4 bg-white border border-slate-200 rounded-xl hover:border-emerald-400 transition-all cursor-grab active:cursor-grabbing" draggable="true">
+                                            <!-- UPDATED: size-6 -->
+                                            <div class="task-checkbox size-6 rounded border-2 border-slate-200 mr-4 flex items-center justify-center group-hover:border-emerald-400 transition-colors cursor-pointer">
+                                                <!-- UPDATED: size-3.5 -->
+                                                <i data-lucide="check" class="size-3.5 text-emerald-500 opacity-0 group-hover:opacity-100"></i>
+                                            </div>
                                             <div class="text-left flex-1">
                                                 <span class="block text-sm font-bold text-slate-900">Review Landing Page Analytics</span>
                                                 <div class="flex items-center mt-1.5 space-x-2">
@@ -238,13 +266,18 @@
                                                 </div>
                                             </div>
                                             <div class="text-slate-300 group-hover:text-slate-400 transition-colors">
-                                                <i data-lucide="grip-vertical" class="w-5 h-5"></i>
+                                                <!-- UPDATED: size-5 -->
+                                                <i data-lucide="grip-vertical" class="size-5"></i>
                                             </div>
                                         </div>
 
                                         <!-- Active Task 3 -->
-                                        <div class="group flex items-center p-4 bg-white border border-slate-200 rounded-xl hover:border-amber-400 transition-all cursor-grab active:cursor-grabbing">
-                                            <div class="w-6 h-6 rounded border-2 border-slate-200 mr-4 flex items-center justify-center group-hover:border-amber-400 transition-colors cursor-pointer"></div>
+                                        <div class="task-item group flex items-center p-4 bg-white border border-slate-200 rounded-xl hover:border-amber-400 transition-all cursor-grab active:cursor-grabbing" draggable="true">
+                                            <!-- UPDATED: size-6 -->
+                                            <div class="task-checkbox size-6 rounded border-2 border-slate-200 mr-4 flex items-center justify-center group-hover:border-amber-400 transition-colors cursor-pointer">
+                                                 <!-- UPDATED: size-3.5 -->
+                                                 <i data-lucide="check" class="size-3.5 text-amber-500 opacity-0 group-hover:opacity-100"></i>
+                                            </div>
                                             <div class="text-left flex-1">
                                                 <span class="block text-sm font-bold text-slate-900">Draft Product Announcement Tweet</span>
                                                 <div class="flex items-center mt-1.5 space-x-2">
@@ -252,14 +285,17 @@
                                                 </div>
                                             </div>
                                             <div class="text-slate-300 group-hover:text-slate-400 transition-colors">
-                                                <i data-lucide="grip-vertical" class="w-5 h-5"></i>
+                                                <!-- UPDATED: size-5 -->
+                                                <i data-lucide="grip-vertical" class="size-5"></i>
                                             </div>
                                         </div>
 
                                         <!-- Done Task -->
                                         <div class="flex items-center p-4 bg-slate-50 border border-slate-100 rounded-xl opacity-50">
-                                            <div class="w-6 h-6 rounded bg-slate-300 mr-4 flex items-center justify-center">
-                                                <i data-lucide="check" class="w-3.5 h-3.5 text-white"></i>
+                                            <!-- UPDATED: size-6 -->
+                                            <div class="size-6 rounded bg-slate-300 mr-4 flex items-center justify-center">
+                                                <!-- UPDATED: size-3.5 -->
+                                                <i data-lucide="check" class="size-3.5 text-white"></i>
                                             </div>
                                             <div class="text-left flex-1">
                                                 <span class="block text-sm font-bold text-slate-500 line-through">Send Weekly Update Email</span>
@@ -283,14 +319,17 @@
                 <!-- Content -->
                 <div>
                     <div class="inline-flex items-center space-x-2 px-3 py-1.5 bg-rose-50 border border-rose-100 rounded-full mb-8">
-                        <span class="relative flex h-2 w-2">
-                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
-                            <span class="relative inline-flex rounded-full h-2 w-2 bg-rose-500"></span>
+                        <!-- UPDATED: size-2 -->
+                        <span class="relative flex size-2">
+                            <!-- UPDATED: size-full -->
+                            <span class="animate-ping absolute inline-flex size-full rounded-full bg-rose-400 opacity-75"></span>
+                            <!-- UPDATED: size-2 -->
+                            <span class="relative inline-flex rounded-full size-2 bg-rose-500"></span>
                         </span>
                         <span class="text-xs font-bold uppercase tracking-widest text-rose-500">The Clarity Gap</span>
                     </div>
 
-                    <h2 class="text-5xl font-extrabold mb-6 tracking-tighter text-slate-900 leading-[1.1]">
+                    <h2 class="text-5xl font-extrabold mb-6 tracking-tighter text-slate-900 leading-[1.2]">
                         Drowning in tasks, <br/>
                         <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-indigo-400">starving for strategy.</span>
                     </h2>
@@ -300,9 +339,11 @@
                     </p>
 
                     <div class="space-y-4">
-                        <div class="group flex items-center p-4 rounded-2xl hover:bg-slate-50 transition-colors border border-transparent hover:border-slate-100">
-                            <div class="w-12 h-12 rounded-xl bg-rose-50 flex items-center justify-center shrink-0 mr-5 group-hover:bg-white group-hover:shadow-sm transition-all border border-rose-100">
-                                <i data-lucide="activity" class="w-5 h-5 text-rose-500"></i>
+                        <div class="group flex cursor-pointer items-center p-4 rounded-2xl hover:bg-slate-50 transition-colors border border-transparent hover:border-slate-100">
+                            <!-- UPDATED: size-12 -->
+                            <div class="size-12 rounded-xl bg-rose-50 flex items-center justify-center shrink-0 mr-5 group-hover:bg-white group-hover:shadow-sm transition-all border border-rose-100">
+                                <!-- UPDATED: size-5 -->
+                                <i data-lucide="activity" class="size-5 text-rose-500"></i>
                             </div>
                             <div>
                                 <h4 class="font-bold text-slate-900 text-lg">False Movement</h4>
@@ -310,9 +351,11 @@
                             </div>
                         </div>
 
-                        <div class="group flex items-center p-4 rounded-2xl hover:bg-slate-50 transition-colors border border-transparent hover:border-slate-100">
-                            <div class="w-12 h-12 rounded-xl bg-rose-50 flex items-center justify-center shrink-0 mr-5 group-hover:bg-white group-hover:shadow-sm transition-all border border-rose-100">
-                                <i data-lucide="layers" class="w-5 h-5 text-rose-500"></i>
+                        <div class="group flex cursor-pointer items-center p-4 rounded-2xl hover:bg-slate-50 transition-colors border border-transparent hover:border-slate-100">
+                            <!-- UPDATED: size-12 -->
+                            <div class="size-12 rounded-xl bg-rose-50 flex items-center justify-center shrink-0 mr-5 group-hover:bg-white group-hover:shadow-sm transition-all border border-rose-100">
+                                <!-- UPDATED: size-5 -->
+                                <i data-lucide="layers" class="size-5 text-rose-500"></i>
                             </div>
                             <div>
                                 <h4 class="font-bold text-slate-900 text-lg">Context Switching</h4>
@@ -320,9 +363,11 @@
                             </div>
                         </div>
 
-                        <div class="group flex items-center p-4 rounded-2xl hover:bg-slate-50 transition-colors border border-transparent hover:border-slate-100">
-                            <div class="w-12 h-12 rounded-xl bg-rose-50 flex items-center justify-center shrink-0 mr-5 group-hover:bg-white group-hover:shadow-sm transition-all border border-rose-100">
-                                <i data-lucide="compass" class="w-5 h-5 text-rose-500"></i>
+                        <div class="group flex cursor-pointer items-center p-4 rounded-2xl hover:bg-slate-50 transition-colors border border-transparent hover:border-slate-100">
+                            <!-- UPDATED: size-12 -->
+                            <div class="size-12 rounded-xl bg-rose-50 flex items-center justify-center shrink-0 mr-5 group-hover:bg-white group-hover:shadow-sm transition-all border border-rose-100">
+                                <!-- UPDATED: size-5 -->
+                                <i data-lucide="compass" class="size-5 text-rose-500"></i>
                             </div>
                             <div>
                                 <h4 class="font-bold text-slate-900 text-lg">Strategy Drift</h4>
@@ -333,16 +378,17 @@
                 </div>
 
                 <!-- Visual Mockup (Chaos/Noise Representation) -->
-                <div class="relative w-full max-w-md mx-auto perspective-1000">
+                <div class="relative w-full max-w-md cursor-pointer mx-auto perspective-1000">
                     
                     <!-- Main Card -->
                     <div class="relative bg-white rounded-2xl shadow-md border border-slate-200 overflow-hidden">
                         <!-- Header -->
                         <div class="bg-slate-50 border-b border-slate-100 px-5 py-4 flex items-center justify-between">
                             <div class="flex items-center space-x-2">
-                                <div class="w-3 h-3 rounded-full bg-rose-400"></div>
-                                <div class="w-3 h-3 rounded-full bg-amber-400"></div>
-                                <div class="w-3 h-3 rounded-full bg-green-400"></div>
+                                <!-- UPDATED: size-3 -->
+                                <div class="size-3 rounded-full bg-rose-400"></div>
+                                <div class="size-3 rounded-full bg-amber-400"></div>
+                                <div class="size-3 rounded-full bg-green-400"></div>
 
                             </div>
                             <span class="text-[10px] font-bold uppercase tracking-widest text-slate-400">Typical Monday</span>
@@ -355,35 +401,41 @@
 
                             <!-- Items -->
                             <div class="flex items-center p-3 bg-rose-50/50 border border-rose-100 rounded-lg">
-                                <div class="w-4 h-4 border-2 border-rose-400 rounded mr-3"></div>
+                                <!-- UPDATED: size-4 -->
+                                <div class="size-4 border-2 border-rose-400 rounded mr-3"></div>
                                 <span class="text-sm font-bold text-rose-900">Urgent: Server Down</span>
                                 <span class="ml-auto text-[10px] font-black bg-rose-100 text-rose-600 px-2 py-0.5 rounded">NOW</span>
                             </div>
 
                             <div class="flex items-center p-3 bg-white border border-slate-100 rounded-lg opacity-75">
-                                <div class="w-4 h-4 border-2 border-slate-300 rounded mr-3"></div>
+                                <!-- UPDATED: size-4 -->
+                                <div class="size-4 border-2 border-slate-300 rounded mr-3"></div>
                                 <span class="text-sm font-medium text-slate-600">Reply to support tickets (12)</span>
                             </div>
 
                              <div class="flex items-center p-3 bg-white border border-slate-100 rounded-lg opacity-60">
-                                <div class="w-4 h-4 border-2 border-slate-300 rounded mr-3"></div>
+                                <!-- UPDATED: size-4 -->
+                                <div class="size-4 border-2 border-slate-300 rounded mr-3"></div>
                                 <span class="text-sm font-medium text-slate-600">Update investor deck</span>
                             </div>
 
                             <div class="flex items-center p-3 bg-white border border-slate-100 rounded-lg opacity-50">
-                                <div class="w-4 h-4 border-2 border-slate-300 rounded mr-3"></div>
+                                <!-- UPDATED: size-4 -->
+                                <div class="size-4 border-2 border-slate-300 rounded mr-3"></div>
                                 <span class="text-sm font-medium text-slate-600">Call with accountant</span>
                             </div>
 
                             <div class="flex items-center p-3 bg-white border border-slate-100 rounded-lg opacity-40">
-                                <div class="w-4 h-4 border-2 border-slate-300 rounded mr-3"></div>
+                                <!-- UPDATED: size-4 -->
+                                <div class="size-4 border-2 border-slate-300 rounded mr-3"></div>
                                 <span class="text-sm font-medium text-slate-600">Review PR #402</span>
                             </div>
                         </div>
                         
                         <!-- Floating Badge -->
                         <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 bg-slate-900 text-white px-4 py-2.5 rounded-full shadow-xl flex items-center space-x-2 whitespace-nowrap">
-                            <i data-lucide="alert-circle" class="w-4 h-4 text-rose-400"></i>
+                            <!-- UPDATED: size-4 -->
+                            <i data-lucide="alert-circle" class="size-4 text-rose-400"></i>
                             <span class="text-xs font-bold">Clarification Needed</span>
                         </div>
                     </div>
@@ -400,7 +452,7 @@
 
         <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
             <div class="text-center max-w-3xl mx-auto mb-20">
-                <h2 class="text-4xl md:text-5xl font-extrabold tracking-tighter text-slate-900 mb-6">
+                <h2 class="text-4xl md:text-5xl font-extrabold tracking-tighter !leading-[1.2] text-slate-900 mb-6">
                     Opinionated software <br />
                     <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-indigo-400">for opinionated founders.</span>
                 </h2>
@@ -417,7 +469,8 @@
                         <div class="absolute inset-0 opacity-50 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:16px_16px]"></div>
                         <div class="relative bg-white p-4 rounded-lg shadow-sm border border-slate-200 w-2/3 transform group-hover:scale-105 transition-transform duration-300">
                             <div class="flex items-center space-x-2 mb-3 border-b border-slate-100 pb-2">
-                                 <div class="w-2 h-2 rounded-full bg-rose-500"></div>
+                                 <!-- UPDATED: size-2 -->
+                                 <div class="size-2 rounded-full bg-rose-500"></div>
                                  <span class="text-[10px] font-bold text-slate-400 uppercase">Input Validation</span>
                             </div>
                             <div class="space-y-2">
@@ -431,8 +484,10 @@
                     </div>
                     <div class="flex flex-col gap-6 p-6">
                         <div class="flex gap-4 items-center">
-                            <div class="w-10 h-10 bg-indigo-600 rounded-lg flex items-center justify-center shadow-lg shadow-indigo-200">
-                                <i data-lucide="git-branch" class="w-5 h-5 text-white"></i>
+                            <!-- UPDATED: size-10 -->
+                            <div class="size-10 bg-indigo-600 rounded-lg flex items-center justify-center shadow-lg shadow-indigo-200">
+                                <!-- UPDATED: size-5 -->
+                                <i data-lucide="git-branch" class="size-5 text-white"></i>
                             </div>
                             <h3 class="text-xl font-bold text-slate-900">Enforced Hierarchy</h3>
                         </div>
@@ -450,17 +505,20 @@
                         <div class="relative bg-white p-4 rounded-lg shadow-sm border border-slate-200 w-2/3 transform group-hover:scale-105 transition-transform duration-300">
                             <div class="flex justify-between items-center mb-2">
                                  <span class="text-[10px] font-bold text-slate-500">Yesterday's Queue</span>
-                                 <i data-lucide="trash-2" class="w-3 h-3 text-slate-400"></i>
+                                 <!-- UPDATED: size-3 -->
+                                 <i data-lucide="trash-2" class="size-3 text-slate-400"></i>
                             </div>
                             <div class="space-y-1 opacity-50 grayscale">
                                  <div class="flex items-center space-x-2">
-                                    <div class="w-3 h-3 border border-slate-300 rounded"></div>
+                                    <!-- UPDATED: size-3 -->
+                                    <div class="size-3 border border-slate-300 rounded"></div>
                                     <div class="h-2 w-20 bg-slate-200 rounded"></div>
                                  </div>
                             </div>
                             <div class="mt-3 pt-2 border-t border-slate-100">
                                  <div class="flex items-center space-x-2">
-                                    <i data-lucide="sun" class="w-3 h-3 text-amber-500"></i>
+                                    <!-- UPDATED: size-3 -->
+                                    <i data-lucide="sun" class="size-3 text-amber-500"></i>
                                     <span class="text-[10px] font-bold text-slate-900">Fresh Start</span>
                                  </div>
                             </div>
@@ -468,8 +526,10 @@
                     </div>
                     <div class="flex flex-col gap-6 p-6">
                         <div class="flex gap-4 items-center">
-                            <div class="w-10 h-10 bg-indigo-600 rounded-lg flex items-center justify-center shadow-lg shadow-indigo-200">
-                                <i data-lucide="sun" class="w-5 h-5 text-white"></i>
+                            <!-- UPDATED: size-10 -->
+                            <div class="size-10 bg-indigo-600 rounded-lg flex items-center justify-center shadow-lg shadow-indigo-200">
+                                <!-- UPDATED: size-5 -->
+                                <i data-lucide="sun" class="size-5 text-white"></i>
                             </div>
                             <h3 class="text-xl font-bold text-slate-900">The Daily Reset</h3>
                         </div>
@@ -488,7 +548,8 @@
                             <div class="flex justify-between items-center mb-3">
                                  <span class="text-[10px] font-bold text-indigo-600">Single Thread Mode</span>
                                  <div class="w-6 h-3 bg-indigo-600 rounded-full relative">
-                                    <div class="absolute right-0.5 top-0.5 w-2 h-2 bg-white rounded-full shadow-sm"></div>
+                                    <!-- UPDATED: size-2 -->
+                                    <div class="absolute right-0.5 top-0.5 size-2 bg-white rounded-full shadow-sm"></div>
                                  </div>
                             </div>
                             <div class="p-2 bg-indigo-50 border border-indigo-100 rounded text-center">
@@ -501,8 +562,10 @@
                     </div>
                     <div class="flex flex-col gap-6 p-6">
                         <div class="flex gap-4 items-center">
-                            <div class="w-10 h-10 bg-indigo-600 rounded-lg flex items-center justify-center shadow-lg shadow-indigo-200">
-                                <i data-lucide="zap" class="w-5 h-5 text-white"></i>
+                            <!-- UPDATED: size-10 -->
+                            <div class="size-10 bg-indigo-600 rounded-lg flex items-center justify-center shadow-lg shadow-indigo-200">
+                                <!-- UPDATED: size-5 -->
+                                <i data-lucide="zap" class="size-5 text-white"></i>
                             </div>
                             <h3 class="text-xl font-bold text-slate-900">Anti-Multitasking</h3>
                         </div>
@@ -529,10 +592,11 @@
                 <div>
                     <div class="mb-12">
                         <div class="inline-flex items-center space-x-2 px-3 py-1.5 bg-white border border-slate-200 rounded-full mb-6 shadow-sm">
-                            <i data-lucide="git-merge" class="w-3 h-3 text-indigo-500"></i>
+                            <!-- UPDATED: size-3 -->
+                            <i data-lucide="git-merge" class="size-3 text-indigo-500"></i>
                             <span class="text-[12px] font-bold uppercase tracking-widest text-slate-500">The Stack</span>
                         </div>
-                        <h2 class="text-4xl md:text-5xl font-extrabold tracking-tighter text-slate-900 mb-6">
+                        <h2 class="text-4xl md:text-5xl font-extrabold !leading-[1.2] text-slate-900 mb-6">
                             Every task needs<br/>
                             <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-indigo-400">a parent.</span>
                         </h2>
@@ -547,77 +611,92 @@
                         <!-- Goal (Active by default) -->
                         <div class="hierarchy-item group cursor-pointer" data-level="goals">
                             <div class="flex items-center p-4 rounded-xl transition-all duration-300 border bg-white shadow-md border-indigo-100 scale-100 opacity-100">
-                                <div class="w-10 h-10 rounded-lg bg-indigo-600 flex items-center justify-center mr-5 shrink-0 shadow-md shadow-indigo-200">
-                                    <i data-lucide="target" class="w-5 h-5 text-white"></i>
+                                <!-- UPDATED: size-10 -->
+                                <div class="size-10 rounded-lg bg-indigo-600 flex items-center justify-center mr-5 shrink-0 shadow-md shadow-indigo-200">
+                                    <!-- UPDATED: size-5 -->
+                                    <i data-lucide="target" class="size-5 text-white"></i>
                                 </div>
                                 <div class="flex-1">
                                     <h4 class="text-lg font-bold text-slate-900">Goals</h4>
                                     <p class="text-sm text-slate-500 font-medium">1-3 Years • The North Star</p>
                                 </div>
-                                <i data-lucide="chevron-right" class="w-5 h-5 text-indigo-500 opacity-100"></i>
+                                <!-- UPDATED: size-5 -->
+                                <i data-lucide="chevron-right" class="size-5 text-indigo-500 opacity-100"></i>
                             </div>
                         </div>
 
                         <!-- Projects -->
                         <div class="hierarchy-item group cursor-pointer" data-level="projects">
                             <div class="flex items-center p-4 rounded-xl transition-all duration-300 border border-transparent hover:bg-white hover:border-slate-100 opacity-90 grayscale hover:grayscale-0">
-                                <div class="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center mr-5 shrink-0 shadow-sm">
-                                    <i data-lucide="layers" class="w-5 h-5 text-white"></i>
+                                <!-- UPDATED: size-10 -->
+                                <div class="size-10 rounded-lg bg-slate-800 flex items-center justify-center mr-5 shrink-0 shadow-sm">
+                                    <!-- UPDATED: size-5 -->
+                                    <i data-lucide="layers" class="size-5 text-white"></i>
                                 </div>
                                 <div class="flex-1">
                                     <h4 class="text-lg font-bold text-slate-900">Projects</h4>
                                     <p class="text-sm text-slate-500 font-medium">1-6 Months • Grouped Efforts</p>
                                 </div>
-                                <i data-lucide="chevron-right" class="w-5 h-5 text-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                                <!-- UPDATED: size-5 -->
+                                <i data-lucide="chevron-right" class="size-5 text-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity"></i>
                             </div>
                         </div>
 
                         <!-- Tasks -->
                         <div class="hierarchy-item cursor-pointer" data-level="tasks">
                             <div class="flex items-center p-4 rounded-xl transition-all duration-300 border border-transparent hover:bg-white hover:border-slate-100 opacity-90 grayscale hover:grayscale-0">
-                                <div class="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center mr-5 shrink-0 shadow-sm">
-                                    <i data-lucide="check-circle-2" class="w-5 h-5 text-white"></i>
+                                <!-- UPDATED: size-10 -->
+                                <div class="size-10 rounded-lg bg-slate-800 flex items-center justify-center mr-5 shrink-0 shadow-sm">
+                                    <!-- UPDATED: size-5 -->
+                                    <i data-lucide="check-circle-2" class="size-5 text-white"></i>
                                 </div>
                                 <div class="flex-1">
                                     <h4 class="text-lg font-bold text-slate-900">Tasks</h4>
                                     <p class="text-sm text-slate-500 font-medium">Hours • Actionable Steps</p>
                                 </div>
-                                <i data-lucide="chevron-right" class="w-5 h-5 text-amber-500 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                                <!-- UPDATED: size-5 -->
+                                <i data-lucide="chevron-right" class="size-5 text-amber-500 opacity-0 group-hover:opacity-100 transition-opacity"></i>
                             </div>
                         </div>
 
                         <!-- Ideas -->
                         <div class="hierarchy-item group cursor-pointer" data-level="ideas">
                             <div class="flex items-center p-4 rounded-xl transition-all duration-300 border border-transparent hover:bg-white hover:border-slate-100 opacity-90 grayscale hover:grayscale-0">
-                                <div class="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center mr-5 shrink-0 shadow-sm">
-                                    <i data-lucide="lightbulb" class="w-5 h-5 text-white"></i>
+                                <!-- UPDATED: size-10 -->
+                                <div class="size-10 rounded-lg bg-slate-800 flex items-center justify-center mr-5 shrink-0 shadow-sm">
+                                    <!-- UPDATED: size-5 -->
+                                    <i data-lucide="lightbulb" class="size-5 text-white"></i>
                                 </div>
                                 <div class="flex-1">
                                     <h4 class="text-lg font-bold text-slate-900">Ideas</h4>
                                     <p class="text-sm text-slate-500 font-medium">Captured • Convert to Task</p>
                                 </div>
-                                <i data-lucide="chevron-right" class="w-5 h-5 text-purple-500 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                                <!-- UPDATED: size-5 -->
+                                <i data-lucide="chevron-right" class="size-5 text-purple-500 opacity-0 group-hover:opacity-100 transition-opacity"></i>
                             </div>
                         </div>
 
                          <!-- To-dos -->
                          <div class="hierarchy-item group cursor-pointer" data-level="todos">
                             <div class="flex items-center p-4 rounded-xl transition-all duration-300 border border-transparent hover:bg-white hover:border-slate-100 opacity-90 grayscale hover:grayscale-0">
-                                <div class="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center mr-5 shrink-0 shadow-sm">
-                                    <i data-lucide="clipboard-list" class="w-5 h-5 text-white"></i>
+                                <!-- UPDATED: size-10 -->
+                                <div class="size-10 rounded-lg bg-slate-800 flex items-center justify-center mr-5 shrink-0 shadow-sm">
+                                    <!-- UPDATED: size-5 -->
+                                    <i data-lucide="clipboard-list" class="size-5 text-white"></i>
                                 </div>
                                 <div class="flex-1">
                                     <h4 class="text-lg font-bold text-slate-900">To-dos</h4>
                                     <p class="text-sm text-slate-500 font-medium">Quick • Today's Focus</p>
                                 </div>
-                                <i data-lucide="chevron-right" class="w-5 h-5 text-red-500 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                                <!-- UPDATED: size-5 -->
+                                <i data-lucide="chevron-right" class="size-5 text-red-500 opacity-0 group-hover:opacity-100 transition-opacity"></i>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Right Preview Panel (High Fidelity Mockup) -->
-                <div class="relative group perspective-1000 h-[500px] flex items-center justify-center">
+                <div class="relative group perspective-1000 h-[500px] flex items-center justify-center cursor-pointer">
                     <!-- Background Gradient -->
                     <div id="hierarchy-glow" class="absolute -inset-4 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 rounded-[2.5rem] blur-xl opacity-100 transition-all duration-1000"></div>
                     
@@ -628,15 +707,18 @@
                         <!-- Chrome/Header -->
                         <div class="bg-slate-50 px-6 py-4 border-b border-slate-100 flex items-center justify-between">
                             <div class="flex items-center space-x-2">
-                                <div class="w-3 h-3 rounded-full bg-rose-400"></div>
-                                <div class="w-3 h-3 rounded-full bg-amber-400"></div>
-                                <div class="w-3 h-3 rounded-full bg-green-400"></div>
+                                <!-- UPDATED: size-3 -->
+                                <div class="size-3 rounded-full bg-rose-400"></div>
+                                <div class="size-3 rounded-full bg-amber-400"></div>
+                                <div class="size-3 rounded-full bg-green-400"></div>
                             </div>
                             <div class="flex items-center space-x-2 px-3 py-1 bg-white border border-slate-200 rounded-md shadow-sm">
-                                <i data-lucide="database" class="w-3 h-3 text-slate-400"></i>
+                                <!-- UPDATED: size-3 -->
+                                <i data-lucide="database" class="size-3 text-slate-400"></i>
                                 <span class="text-[10px] font-bold text-slate-500 uppercase tracking-wider" id="preview-header">Context: Goal</span>
                             </div>
-                            <i data-lucide="more-horizontal" class="w-4 h-4 text-slate-300"></i>
+                            <!-- UPDATED: size-4 -->
+                            <i data-lucide="more-horizontal" class="size-4 text-slate-300"></i>
                         </div>
 
                         <!-- Dynamic Content Area -->
@@ -659,8 +741,9 @@
                                     
                                     <div class="flex items-center justify-between">
                                         <div class="flex -space-x-2">
-                                            <div class="w-8 h-8 rounded-full bg-indigo-100 border-2 border-white flex items-center justify-center text-[10px] font-bold text-indigo-600">Q3</div>
-                                            <div class="w-8 h-8 rounded-full bg-emerald-100 border-2 border-white flex items-center justify-center text-[10px] font-bold text-emerald-600">Q4</div>
+                                            <!-- UPDATED: size-8 -->
+                                            <div class="size-8 rounded-full bg-indigo-100 border-2 border-white flex items-center justify-center text-[10px] font-bold text-indigo-600">Q3</div>
+                                            <div class="size-8 rounded-full bg-emerald-100 border-2 border-white flex items-center justify-center text-[10px] font-bold text-emerald-600">Q4</div>
                                         </div>
                                         <span class="text-xs font-bold text-slate-400">Due Dec 31</span>
                                     </div>
@@ -685,8 +768,10 @@
                 <!-- Text Content -->
                 <div>
                     <div class="inline-flex items-center space-x-2 px-3 py-1.5 bg-indigo-50 border border-indigo-100 rounded-full mb-8">
-                        <span class="relative flex h-2 w-2">
-                            <span class="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
+                        <!-- UPDATED: size-2 -->
+                        <span class="relative flex size-2">
+                            <!-- UPDATED: size-2 -->
+                            <span class="relative inline-flex rounded-full size-2 bg-indigo-500"></span>
                         </span>
                         <span class="text-xs font-bold uppercase tracking-widest text-indigo-600">The Daily Driver</span>
                     </div>
@@ -702,9 +787,11 @@
 
                     <div class="space-y-6">
                         <!-- Feature 1 -->
-                        <div class="group flex items-center p-4 gap-5 rounded-xl hover:bg-slate-50 transition-all cursor-default border border-transparent hover:border-slate-100">
-                            <div class="flex items-center justify-center bg-indigo-50 h-12 w-12 p-2.5 rounded-lg group-hover:scale-110 transition-transform">
-                                <i data-lucide="layout" class="w-5 h-5 text-indigo-600"></i>
+                        <div class="group flex items-center p-4 gap-5 rounded-xl hover:bg-slate-50 transition-all cursor-default border border-transparent hover:border-slate-100 cursor-pointer">
+                            <!-- UPDATED: size-12 -->
+                            <div class="flex items-center justify-center bg-indigo-50 size-12 p-2.5 rounded-lg group-hover:scale-110 transition-transform">
+                                <!-- UPDATED: size-5 -->
+                                <i data-lucide="layout" class="size-5 text-indigo-600"></i>
                             </div>
                             <div>
                                 <h4 class="text-lg font-bold text-slate-900">Zero-Friction Launch</h4>
@@ -713,9 +800,11 @@
                         </div>
 
                         <!-- Feature 2 -->
-                        <div class="group flex items-center gap-5 p-4 rounded-xl hover:bg-slate-50 transition-all cursor-default border border-transparent hover:border-slate-100">
-                            <div class="flex items-center justify-center h-12 w-12 bg-indigo-50 p-2.5 rounded-lg group-hover:scale-110 transition-transform">
-                                <i data-lucide="mouse-pointer-click" class="w-5 h-5 text-indigo-600"></i>
+                        <div class="group flex items-center gap-5 p-4 rounded-xl hover:bg-slate-50 transition-all cursor-default border border-transparent hover:border-slate-100 cursor-pointer">
+                            <!-- UPDATED: size-12 -->
+                            <div class="flex items-center justify-center size-12 bg-indigo-50 p-2.5 rounded-lg group-hover:scale-110 transition-transform">
+                                <!-- UPDATED: size-5 -->
+                                <i data-lucide="mouse-pointer-click" class="size-5 text-indigo-600"></i>
                             </div>
                             <div>
                                 <h4 class="text-lg font-bold text-slate-900">Manual Curation</h4>
@@ -724,9 +813,11 @@
                         </div>
 
                         <!-- Feature 3 -->
-                        <div class="group flex items-center gap-5 p-4 rounded-xl hover:bg-slate-50 transition-all cursor-default border border-transparent hover:border-slate-100">
-                            <div class="flex items-center justify-center h-12 w-12 bg-indigo-50 p-2.5 rounded-lg group-hover:scale-110 transition-transform">
-                                <i data-lucide="check-circle-2" class="w-5 h-5 text-indigo-600"></i>
+                        <div class="group flex items-center gap-5 p-4 rounded-xl hover:bg-slate-50 transition-all cursor-default border border-transparent hover:border-slate-100 cursor-pointer">
+                            <!-- UPDATED: size-12 -->
+                            <div class="flex items-center justify-center size-12 bg-indigo-50 p-2.5 rounded-lg group-hover:scale-110 transition-transform">
+                                <!-- UPDATED: size-5 -->
+                                <i data-lucide="check-circle-2" class="size-5 text-indigo-600"></i>
                             </div>
                             <div>
                                 <h4 class="text-lg font-bold text-slate-900">Visible Momentum</h4>
@@ -744,12 +835,14 @@
                         <!-- Header Bar -->
                         <div class="bg-slate-50 px-8 py-5 border-b border-slate-100 flex items-center justify-between">
                             <div class="flex items-center space-x-2">
-                                <div class="w-3 h-3 rounded-full bg-rose-400"></div>
-                                <div class="w-3 h-3 rounded-full bg-amber-400"></div>
-                                <div class="w-3 h-3 rounded-full bg-green-400"></div>
+                                <!-- UPDATED: size-3 -->
+                                <div class="size-3 rounded-full bg-rose-400"></div>
+                                <div class="size-3 rounded-full bg-amber-400"></div>
+                                <div class="size-3 rounded-full bg-green-400"></div>
                             </div>
                             <span class="text-[10px] font-bold uppercase tracking-widest text-slate-400">Focus Mode // Active</span>
-                            <i data-lucide="maximize-2" class="w-4 h-4 text-slate-300"></i>
+                            <!-- UPDATED: size-4 -->
+                            <i data-lucide="maximize-2" class="size-4 text-slate-300"></i>
                         </div>
 
                         <!-- Card Content -->
@@ -760,8 +853,10 @@
                                     <h3 class="text-3xl font-black text-slate-900 tracking-tight">Today</h3>
                                     <p class="text-sm text-slate-500 font-medium mt-1">3 tasks remaining • 2.5 hours est.</p>
                                 </div>
-                                <div class="h-8 w-8 rounded-full bg-slate-100 flex items-center justify-center border border-slate-200">
-                                    <i data-lucide="more-horizontal" class="w-4 h-4 text-slate-400"></i>
+                                <!-- UPDATED: size-8 -->
+                                <div class="size-8 rounded-full bg-slate-100 flex items-center justify-center border border-slate-200">
+                                    <!-- UPDATED: size-4 -->
+                                    <i data-lucide="more-horizontal" class="size-4 text-slate-400"></i>
                                 </div>
                             </div>
 
@@ -771,7 +866,8 @@
                                 <div class="p-4 bg-white border border-indigo-200 rounded-xl shadow-sm relative overflow-hidden group/task cursor-pointer hover:border-indigo-400 transition-colors">
                                     <div class="absolute inset-y-0 left-0 w-1 bg-indigo-500"></div>
                                     <div class="flex items-start">
-                                        <div class="mt-0.5 w-5 h-5 rounded border-2 border-indigo-200 mr-4 flex items-center justify-center group-hover/task:bg-indigo-50 transition-colors"></div>
+                                        <!-- UPDATED: size-5 -->
+                                        <div class="mt-0.5 size-5 rounded border-2 border-indigo-200 mr-4 flex items-center justify-center group-hover/task:bg-indigo-50 transition-colors"></div>
                                         <div>
                                             <span class="block text-sm font-bold text-slate-900">Finish Q3 Financial Review</span>
                                             <span class="inline-block mt-2 text-[10px] font-bold text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded border border-indigo-100">GOAL: FINANCE</span>
@@ -782,7 +878,8 @@
                                 <!-- Task 2 -->
                                 <div class="p-4 bg-white border border-slate-200 rounded-xl hover:border-slate-300 transition-colors cursor-pointer group/task">
                                     <div class="flex items-start">
-                                        <div class="mt-0.5 w-5 h-5 rounded border-2 border-slate-200 mr-4 flex items-center justify-center group-hover/task:border-slate-400 transition-colors"></div>
+                                        <!-- UPDATED: size-5 -->
+                                        <div class="mt-0.5 size-5 rounded border-2 border-slate-200 mr-4 flex items-center justify-center group-hover/task:border-slate-400 transition-colors"></div>
                                         <div>
                                             <span class="block text-sm font-bold text-slate-900">Update landing page copy</span>
                                             <span class="inline-block mt-2 text-[10px] font-bold text-slate-500 bg-slate-50 px-2 py-0.5 rounded border border-slate-100">PROJ: WEBSITE</span>
@@ -793,7 +890,8 @@
                                 <!-- Task 3 -->
                                 <div class="p-4 bg-white border border-slate-200 rounded-xl hover:border-slate-300 transition-colors cursor-pointer group/task">
                                     <div class="flex items-start">
-                                        <div class="mt-0.5 w-5 h-5 rounded border-2 border-slate-200 mr-4 flex items-center justify-center group-hover/task:border-slate-400 transition-colors"></div>
+                                        <!-- UPDATED: size-5 -->
+                                        <div class="mt-0.5 size-5 rounded border-2 border-slate-200 mr-4 flex items-center justify-center group-hover/task:border-slate-400 transition-colors"></div>
                                         <div>
                                             <span class="block text-sm font-bold text-slate-900">Email beta users about update</span>
                                             <span class="inline-block mt-2 text-[10px] font-bold text-slate-500 bg-slate-50 px-2 py-0.5 rounded border border-slate-100">TASK: COMMs</span>
@@ -804,8 +902,10 @@
                                 <!-- Completed Task (Faded) -->
                                 <div class="p-4 bg-slate-50 border border-slate-100 rounded-xl opacity-60">
                                     <div class="flex items-center">
-                                        <div class="w-5 h-5 rounded bg-indigo-100 mr-4 flex items-center justify-center">
-                                            <i data-lucide="check" class="w-3 h-3 text-indigo-600"></i>
+                                        <!-- UPDATED: size-5 -->
+                                        <div class="size-5 rounded bg-indigo-100 mr-4 flex items-center justify-center">
+                                            <!-- UPDATED: size-3 -->
+                                            <i data-lucide="check" class="size-3 text-indigo-600"></i>
                                         </div>
                                         <span class="block text-sm font-bold text-slate-400 line-through">Server maintenance</span>
                                     </div>
@@ -839,14 +939,16 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-fr">
                 
                 <!-- Card 1: Automatic Rollups (Large Width) -->
-                <div class="md:col-span-2 bg-white rounded-2xl border border-slate-200 p-0 shadow-sm hover:shadow-md transition-all group overflow-hidden flex flex-col md:flex-row">
+                <div class="md:col-span-2 bg-white rounded-2xl border border-slate-200 p-0 shadow-sm hover:shadow-md transition-all group overflow-hidden flex flex-col md:flex-row cursor-pointer">
                     
                     <!-- Content Side -->
                     <div class="p-8 flex flex-col justify-between flex-1">
                         <div class="flex flex-col gap-6">
                             <div class="flex gap-4 items-center">
-                                <div class="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center text-indigo-600 shrink-0">
-                                    <i data-lucide="refresh-cw" class="w-6 h-6"></i>
+                                <!-- UPDATED: size-12 -->
+                                <div class="size-12 bg-indigo-50 rounded-xl flex items-center justify-center text-indigo-600 shrink-0">
+                                    <!-- UPDATED: size-6 -->
+                                    <i data-lucide="refresh-cw" class="size-6"></i>
                                 </div>
                                 <h4 class="text-2xl font-bold text-slate-900">Automatic Rollups</h4>
                             </div>
@@ -878,12 +980,14 @@
                 </div>
 
                 <!-- Card 2: Capture Ideas (Vertical) -->
-                <div class="bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all group relative overflow-hidden flex flex-col h-full">
+                <div class="bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all group relative overflow-hidden flex flex-col h-full cursor-pointer">
                     <!-- Content Header -->
                     <div class="p-8 pb-4">
                         <div class="flex gap-4 items-center mb-4">
-                            <div class="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center text-emerald-600 shrink-0">
-                                <i data-lucide="lightbulb" class="w-6 h-6"></i>
+                            <!-- UPDATED: size-12 -->
+                            <div class="size-12 bg-emerald-50 rounded-xl flex items-center justify-center text-emerald-600 shrink-0">
+                                <!-- UPDATED: size-6 -->
+                                <i data-lucide="lightbulb" class="size-6"></i>
                             </div>
                             <h4 class="text-2xl font-bold text-slate-900">Capture Safely</h4>
                         </div>
@@ -904,11 +1008,14 @@
                              <!-- Stack item 2 (Main) -->
                             <div class="bg-white border border-emerald-200 rounded-lg p-3 shadow-sm flex items-center justify-between group-hover:translate-y-[-2px] transition-transform">
                                 <div class="flex items-center space-x-2">
-                                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                                    <!-- UPDATED: size-1.5 -->
+                                    <span class="size-1.5 rounded-full bg-emerald-400"></span>
                                     <span class="text-xs font-bold text-slate-400">New Idea...</span>
                                 </div>
-                                <div class="w-6 h-6 bg-emerald-500 rounded flex items-center justify-center shadow-lg shadow-emerald-200">
-                                    <i data-lucide="plus" class="w-3 h-3 text-white"></i>
+                                <!-- UPDATED: size-6 -->
+                                <div class="size-6 bg-emerald-500 rounded flex items-center justify-center shadow-lg shadow-emerald-200">
+                                    <!-- UPDATED: size-3 -->
+                                    <i data-lucide="plus" class="size-3 text-white"></i>
                                 </div>
                             </div>
                         </div>
@@ -916,12 +1023,14 @@
                 </div>
 
                 <!-- Card 3: Convert to Tasks (Vertical) -->
-                <div class="bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all group overflow-hidden flex flex-col h-full">
+                <div class="bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all group overflow-hidden flex flex-col h-full cursor-pointer">
                     <!-- Content Header -->
                     <div class="p-8 pb-4">
                         <div class="flex gap-4 items-center mb-4">
-                            <div class="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center text-amber-600 shrink-0">
-                                <i data-lucide="arrow-right-circle" class="w-6 h-6"></i>
+                            <!-- UPDATED: size-12 -->
+                            <div class="size-12 bg-amber-50 rounded-xl flex items-center justify-center text-amber-600 shrink-0">
+                                <!-- UPDATED: size-6 -->
+                                <i data-lucide="arrow-right-circle" class="size-6"></i>
                             </div>
                             <h4 class="text-2xl font-bold text-slate-900">Promote</h4>
                         </div>
@@ -937,8 +1046,10 @@
                                 <span class="text-xs font-bold text-slate-500 uppercase">Idea</span>
                             </div>
                             <!-- Arrow -->
-                            <div class="h-8 w-8 mx-auto bg-amber-100 rounded-full flex items-center justify-center z-20 border-2 border-white">
-                                <i data-lucide="arrow-down" class="w-4 h-4 text-amber-600"></i>
+                            <!-- UPDATED: size-8 -->
+                            <div class="size-8 mx-auto bg-amber-100 rounded-full flex items-center justify-center z-20 border-2 border-white">
+                                <!-- UPDATED: size-4 -->
+                                <i data-lucide="arrow-down" class="size-4 text-amber-600"></i>
                             </div>
                             <!-- Action State -->
                             <div class="bg-white p-3 rounded-lg border border-amber-200 shadow-md text-center group-hover:scale-105 transition-transform">
@@ -949,13 +1060,15 @@
                 </div>
 
                 <!-- Card 4: Reorder (Large Width) -->
-                <div class="md:col-span-2 bg-white rounded-2xl border border-slate-200 p-0 shadow-sm hover:shadow-md transition-all group overflow-hidden">
+                <div class="md:col-span-2 bg-white rounded-2xl border border-slate-200 p-0 shadow-sm hover:shadow-md transition-all group overflow-hidden cursor-pointer">
                     <div class="grid md:grid-cols-2 h-full">
                         <!-- Content -->
                         <div class="p-8 flex flex-col justify-center">
                             <div class="flex gap-4 items-center mb-4">
-                                <div class="w-12 h-12 bg-purple-50 rounded-xl flex items-center justify-center text-purple-600 shrink-0">
-                                    <i data-lucide="layers" class="w-6 h-6"></i>
+                                <!-- UPDATED: size-12 -->
+                                <div class="size-12 bg-purple-50 rounded-xl flex items-center justify-center text-purple-600 shrink-0">
+                                    <!-- UPDATED: size-6 -->
+                                    <i data-lucide="layers" class="size-6"></i>
                                 </div>
                                 <h4 class="text-2xl font-bold text-slate-900">Reorder Anytime</h4>
                             </div>
@@ -965,17 +1078,20 @@
                         <!-- Full Height List -->
                         <div class="bg-slate-50 border-t md:border-t-0 md:border-l border-slate-100 p-8 flex flex-col justify-center space-y-3">
                             <div class="bg-white p-3 rounded-lg border border-slate-200 shadow-sm flex items-center space-x-3 group-hover:translate-y-1 transition-transform duration-500">
-                                <i data-lucide="grip-vertical" class="w-4 h-4 text-slate-300"></i>
+                                <!-- UPDATED: size-4 -->
+                                <i data-lucide="grip-vertical" class="size-4 text-slate-300"></i>
                                 <div class="h-2 w-24 bg-slate-100 rounded"></div>
                             </div>
                             <!-- Active Drag Item -->
                             <div class="bg-white p-3 rounded-lg border border-purple-200 shadow-lg scale-105 flex items-center space-x-3 relative z-10">
                                 <div class="absolute -left-1 top-1/2 -translate-y-1/2 w-1 h-8 bg-purple-500 rounded-r"></div>
-                                <i data-lucide="grip-vertical" class="w-4 h-4 text-purple-500"></i>
+                                <!-- UPDATED: size-4 -->
+                                <i data-lucide="grip-vertical" class="size-4 text-purple-500"></i>
                                 <div class="h-2 w-32 bg-purple-100 rounded"></div>
                             </div>
                             <div class="bg-white p-3 rounded-lg border border-slate-200 shadow-sm flex items-center space-x-3 group-hover:-translate-y-1 transition-transform duration-500">
-                                <i data-lucide="grip-vertical" class="w-4 h-4 text-slate-300"></i>
+                                <!-- UPDATED: size-4 -->
+                                <i data-lucide="grip-vertical" class="size-4 text-slate-300"></i>
                                 <div class="h-2 w-20 bg-slate-100 rounded"></div>
                             </div>
                         </div>
@@ -999,14 +1115,17 @@
 
                 <div class="relative z-10">
                     <div class="inline-flex items-center space-x-2 px-3 py-1.5 bg-white/10 backdrop-blur-md border border-white/10 rounded-full mb-8">
-                        <span class="flex h-2 w-2 relative">
-                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
-                            <span class="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
+                        <!-- UPDATED: size-2 -->
+                        <span class="flex size-2 relative">
+                            <!-- UPDATED: size-full -->
+                            <span class="animate-ping absolute inline-flex size-full rounded-full bg-indigo-400 opacity-75"></span>
+                            <!-- UPDATED: size-2 -->
+                            <span class="relative inline-flex rounded-full size-2 bg-indigo-500"></span>
                         </span>
                         <span class="text-xs font-bold uppercase tracking-widest text-indigo-300">Early Access Open</span>
                     </div>
                     
-                    <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-6 leading-relaxed">
+                    <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-6 !leading-[1.2]">
                         Stop managing tasks. <br/>
                         <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-cyan-400">Start executing.</span>
                     </h2>
@@ -1016,7 +1135,7 @@
                     </p>
 
                     <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <button class="w-full sm:w-auto px-6 py-3 bg-white text-slate-900 rounded-xl font-bold text-lg hover:scale-105 hover:bg-indigo-50 transition-all shadow-xl shadow-indigo-500/20 active:scale-95 btn-shimmer">
+                        <button class="w-full sm:w-auto px-6 py-3 bg-white text-slate-900 rounded-xl font-bold text-lg hover:scale-105 hover:bg-indigo-50 transition-all shadow-xl shadow-indigo-500/20 active:scale-95 btn-shimmer cursor-pointer">
                             Get Early Access - Free
                         </button>
                     </div>
@@ -1042,68 +1161,78 @@
                 <p class="text-lg text-slate-500">Everything you need to know about the Janus methodology.</p>
             </div>
 
-            <div class="space-y-1">
+            <div class="space-y-4">
                 <!-- Question 1 -->
-                <div class="border-b border-slate-100 last:border-0">
-                    <button class="faq-btn w-full py-6 flex items-center justify-between text-left group focus:outline-none">
-                        <span class="text-lg font-bold text-slate-900 group-hover:text-indigo-600 transition-colors pr-8">How is Janus different from traditional to-do list or productivity apps?</span>
-                        <div class="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center shrink-0 group-hover:bg-indigo-50 transition-colors">
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 group-hover:text-indigo-600 transition-transform duration-300"></i>
+                <div class="bg-indigo-50 border border-slate-100 p-4 rounded-3xl cursor-pointer">
+                    <button class="faq-btn w-full py-2 flex items-center justify-between text-left group focus:outline-none cursor-pointer">
+                        <span class="text-base font-semibold text-slate-900 group-hover:text-indigo-600 transition-colors pr-8">How is Janus different from traditional to-do list or productivity apps?</span>
+                        <!-- UPDATED: size-8 -->
+                        <div class="size-8 rounded-full flex items-center justify-center shrink-0 bg-indigo-50 transition-colors">
+                            <!-- UPDATED: size-5 -->
+                            <i data-lucide="chevron-down" class="size-5 text-slate-400 group-hover:text-indigo-600 transition-transform duration-300"></i>
                         </div>
                     </button>
-                    <div class="faq-answer hidden pb-8 text-slate-500 font-medium leading-relaxed pr-8">
+                    <div class="faq-answer hidden pb-2 text-sm text-slate-500 font-medium leading-relaxed pr-8">
                         Most apps are blank canvases that let you hoard tasks indefinitely. Janus is an opinionated execution system. It forces every task to belong to a strategic goal, clears your queue daily, and prevents multitasking, ensuring you work on what actually moves the needle rather than just "getting things done."
                     </div>
                 </div>
 
                 <!-- Question 2 -->
-                <div class="border-b border-slate-100 last:border-0">
-                    <button class="faq-btn w-full py-6 flex items-center justify-between text-left group focus:outline-none">
-                        <span class="text-lg font-bold text-slate-900 group-hover:text-indigo-600 transition-colors pr-8">Do all my tasks have to belong to a goal or project?</span>
-                        <div class="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center shrink-0 group-hover:bg-indigo-50 transition-colors">
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 group-hover:text-indigo-600 transition-transform duration-300"></i>
+                <div class="bg-indigo-50 border border-slate-100 p-4 rounded-3xl cursor-pointer">
+                    <button class="faq-btn w-full py-2 flex items-center justify-between text-left group focus:outline-none cursor-pointer">
+                        <span class="text-base font-semibold text-slate-900 group-hover:text-indigo-600 transition-colors pr-8">Do all my tasks have to belong to a goal or project?</span>
+                        <!-- UPDATED: size-8 -->
+                        <div class="size-8 rounded-full bg-indigo-50 flex items-center justify-center shrink-0 transition-colors">
+                            <!-- UPDATED: size-5 -->
+                            <i data-lucide="chevron-down" class="size-5 text-slate-400 group-hover:text-indigo-600 transition-transform duration-300"></i>
                         </div>
                     </button>
-                    <div class="faq-answer hidden pb-8 text-slate-500 font-medium leading-relaxed pr-8">
+                    <div class="faq-answer hidden pb-2 text-sm text-slate-500 font-medium leading-relaxed pr-8">
                         Yes. This is a core feature, not a bug. "Orphan" tasks are often busy work in disguise. By requiring a parent Goal or Project, Janus forces you to justify why a task exists before you commit to doing it. If it doesn't serve a goal, it shouldn't be on your list.
                     </div>
                 </div>
 
                 <!-- Question 3 -->
-                <div class="border-b border-slate-100 last:border-0">
-                    <button class="faq-btn w-full py-6 flex items-center justify-between text-left group focus:outline-none">
-                        <span class="text-lg font-bold text-slate-900 group-hover:text-indigo-600 transition-colors pr-8">What is “Today’s Focus” and how does it help me decide what to work on?</span>
-                        <div class="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center shrink-0 group-hover:bg-indigo-50 transition-colors">
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 group-hover:text-indigo-600 transition-transform duration-300"></i>
+                <div class="bg-indigo-50 border border-slate-100 p-4 rounded-3xl cursor-pointer">
+                    <button class="faq-btn w-full py-2 flex items-center justify-between text-left group focus:outline-none cursor-pointer">
+                        <span class="text-base font-semibold text-slate-900 group-hover:text-indigo-600 transition-colors pr-8">What is “Today’s Focus” and how does it help me decide what to work on?</span>
+                        <!-- UPDATED: size-8 -->
+                        <div class="size-8 rounded-full bg-indigo-50 flex items-center justify-center shrink-0 transition-colors">
+                            <!-- UPDATED: size-5 -->
+                            <i data-lucide="chevron-down" class="size-5 text-slate-400 group-hover:text-indigo-600 transition-transform duration-300"></i>
                         </div>
                     </button>
-                    <div class="faq-answer hidden pb-8 text-slate-500 font-medium leading-relaxed pr-8">
+                    <div class="faq-answer hidden pb-2 text-slate-500 font-semibold leading-relaxed pr-8">
                         "Today's Focus" is a temporary, 24-hour list. You manually curate it each morning from your project backlogs. It separates <em>planning</em> (deciding what to do) from <em>execution</em> (doing it), so when you work, you execute the list without decision fatigue. Any unfinished tasks are returned to the backlog at midnight.
                     </div>
                 </div>
 
                 <!-- Question 4 -->
-                <div class="border-b border-slate-100 last:border-0">
-                    <button class="faq-btn w-full py-6 flex items-center justify-between text-left group focus:outline-none">
-                        <span class="text-lg font-bold text-slate-900 group-hover:text-indigo-600 transition-colors pr-8">Can I use Janus for quick tasks and ideas without disrupting my main priorities?</span>
-                        <div class="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center shrink-0 group-hover:bg-indigo-50 transition-colors">
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 group-hover:text-indigo-600 transition-transform duration-300"></i>
+                <div class="bg-indigo-50 border border-slate-100 p-4 rounded-3xl cursor-pointer">
+                    <button class="faq-btn w-full py-2 flex items-center justify-between text-left group focus:outline-none cursor-pointer">
+                        <span class="text-base font-semibold text-slate-900 group-hover:text-indigo-600 transition-colors pr-8">Can I use Janus for quick tasks and ideas without disrupting my main priorities?</span>
+                        <!-- UPDATED: size-8 -->
+                        <div class="size-8 rounded-full bg-indigo-50 flex items-center justify-center shrink-0 transition-colors">
+                            <!-- UPDATED: size-5 -->
+                            <i data-lucide="chevron-down" class="h-5 w-5 text-slate-400 group-hover:text-indigo-600 transition-transform duration-300"></i>
                         </div>
                     </button>
-                    <div class="faq-answer hidden pb-8 text-slate-500 font-medium leading-relaxed pr-8">
+                    <div class="faq-answer hidden pb-2 text-sm text-slate-500 font-semibold leading-relaxed pr-8">
                         Absolutely. Use the "Ideas" inbox to capture fleeting thoughts or tasks that aren't ready for action. They stay safe in the background and won't clutter your daily view until you explicitly promote them to a Project.
                     </div>
                 </div>
 
                 <!-- Question 5 -->
-                <div class="border-b border-slate-100 last:border-0">
-                    <button class="faq-btn w-full py-6 flex items-center justify-between text-left group focus:outline-none">
-                        <span class="text-lg font-bold text-slate-900 group-hover:text-indigo-600 transition-colors pr-8">Does Janus include calendars, habits, or team collaboration features?</span>
-                        <div class="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center shrink-0 group-hover:bg-indigo-50 transition-colors">
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 group-hover:text-indigo-600 transition-transform duration-300"></i>
+                <div class="bg-indigo-50 border border-slate-100 p-4 rounded-3xl cursor-pointer">
+                    <button class="faq-btn w-full py-2 flex items-center justify-between text-left group focus:outline-none cursor-pointer">
+                        <span class="text-base font-semibold text-slate-900 group-hover:text-indigo-600 transition-colors pr-8">Does Janus include calendars, habits, or team collaboration features?</span>
+                        <!-- UPDATED: size-8 -->
+                        <div class="size-8 rounded-full bg-indigo-50 flex items-center justify-center shrink-0 transition-colors">
+                            <!-- UPDATED: size-5 -->
+                            <i data-lucide="chevron-down" class="h-5 w-5 text-slate-400 group-hover:text-indigo-600 transition-transform duration-300"></i>
                         </div>
                     </button>
-                    <div class="faq-answer hidden pb-8 text-slate-500 font-medium leading-relaxed pr-8">
+                    <div class="faq-answer hidden pb-2 text-sm text-slate-500 font-medium leading-relaxed pr-8">
                         No. Janus is strictly for solo execution. We intentionally omit team features, calendars, and habit trackers to keep the interface silent and focused. It works alongside your calendar, but it doesn't try to replace it.
                     </div>
                 </div>
@@ -1120,7 +1249,8 @@
                 <div class="space-y-6">
                     <div class="flex items-center space-x-3">
                         <div class="bg-indigo-600 p-2 rounded-xl">
-                            <i data-lucide="zap" class="w-5 h-5 text-white"></i>
+                            <!-- UPDATED: size-5 -->
+                            <i data-lucide="zap" class="size-5 text-white"></i>
                         </div>
                         <span class="text-xl font-extrabold tracking-tighter uppercase text-white">Janus</span>
                     </div>
@@ -1155,9 +1285,10 @@
                 <div>
                     <h4 class="text-white font-bold text-sm uppercase tracking-widest mb-6">Connect</h4>
                     <div class="flex space-x-4 mb-8">
-                        <a href="#" class="text-slate-400 hover:text-white transition-colors"><i data-lucide="twitter" class="w-5 h-5"></i></a>
-                        <a href="#" class="text-slate-400 hover:text-white transition-colors"><i data-lucide="github" class="w-5 h-5"></i></a>
-                        <a href="#" class="text-slate-400 hover:text-white transition-colors"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                        <!-- UPDATED: size-5 -->
+                        <a href="#" class="text-slate-400 hover:text-white transition-colors"><i data-lucide="twitter" class="size-5"></i></a>
+                        <a href="#" class="text-slate-400 hover:text-white transition-colors"><i data-lucide="github" class="size-5"></i></a>
+                        <a href="#" class="text-slate-400 hover:text-white transition-colors"><i data-lucide="linkedin" class="size-5"></i></a>
                     </div>
                     <ul class="space-y-4 text-sm text-slate-400 font-medium">
                         <li><a href="#" class="hover:text-indigo-400 transition-colors">Privacy Policy</a></li>
@@ -1168,7 +1299,7 @@
 
             <!-- Copyright -->
             <div class="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-center items-center gap-4">
-                <p class="text-[10px] font-black uppercase tracking-[0.3em] text-slate-500">© 2025 Janus Systems Inc.</p>
+                <p class="text-[10px] font-black uppercase tracking-[0.3em] text-slate-500"><a href="#">© 2025 Janus Systems Inc.</a></p>
             </div>
         </div>
     </footer>
@@ -1216,7 +1347,8 @@
                         <div class="text-left">
                             <h2 class="text-2xl font-black text-slate-900 tracking-tight mb-2">Thursday, Nov 14</h2>
                             <p class="text-sm font-medium text-slate-500 flex items-center">
-                                <i data-lucide="shield-check" class="w-4 h-4 mr-2 text-emerald-500"></i>
+                                <!-- UPDATED: size-4 -->
+                                <i data-lucide="shield-check" class="size-4 mr-2 text-emerald-500"></i>
                                 <span class="text-slate-600">Manual Priority Mode Active</span>
                             </p>
                         </div>
@@ -1225,11 +1357,13 @@
                         </button>
                     </div>
 
-                    <div class="space-y-4">
-                        <div class="group flex items-center p-4 bg-white border border-indigo-200 rounded-xl shadow-sm hover:shadow-md hover:border-indigo-400 transition-all cursor-grab active:cursor-grabbing relative overflow-hidden">
+                    <div class="space-y-4" id="hero-focus-task-list">
+                        <div class="task-item group flex items-center p-4 bg-white border border-indigo-200 rounded-xl shadow-sm hover:shadow-md hover:border-indigo-400 transition-all cursor-grab active:cursor-grabbing relative overflow-hidden" draggable="true">
                             <div class="absolute left-0 top-0 bottom-0 w-1 bg-indigo-500"></div>
-                            <div class="w-6 h-6 rounded border-2 border-indigo-200 mr-4 flex items-center justify-center group-hover:bg-indigo-50 transition-colors cursor-pointer">
-                                <i data-lucide="check" class="w-3.5 h-3.5 text-indigo-600 opacity-0 group-hover:opacity-100"></i>
+                            <!-- UPDATED: size-6 -->
+                            <div class="task-checkbox size-6 rounded border-2 border-indigo-200 mr-4 flex items-center justify-center group-hover:bg-indigo-50 transition-colors cursor-pointer">
+                                <!-- UPDATED: size-3.5 -->
+                                <i data-lucide="check" class="size-3.5 text-indigo-600 opacity-0 group-hover:opacity-100"></i>
                             </div>
                             <div class="text-left flex-1">
                                 <span class="block text-sm font-bold text-slate-900">Refine Strategic Roadmap for Q1</span>
@@ -1238,12 +1372,17 @@
                                 </div>
                             </div>
                             <div class="text-slate-300 group-hover:text-slate-400 transition-colors">
-                                <i data-lucide="grip-vertical" class="w-5 h-5"></i>
+                                <!-- UPDATED: size-5 -->
+                                <i data-lucide="grip-vertical" class="size-5"></i>
                             </div>
                         </div>
 
-                        <div class="group flex items-center p-4 bg-white border border-slate-200 rounded-xl hover:border-emerald-400 transition-all cursor-grab active:cursor-grabbing">
-                            <div class="w-6 h-6 rounded border-2 border-slate-200 mr-4 flex items-center justify-center group-hover:border-emerald-400 transition-colors cursor-pointer"></div>
+                        <div class="task-item group flex items-center p-4 bg-white border border-slate-200 rounded-xl hover:border-emerald-400 transition-all cursor-grab active:cursor-grabbing" draggable="true">
+                            <!-- UPDATED: size-6 -->
+                            <div class="task-checkbox size-6 rounded border-2 border-slate-200 mr-4 flex items-center justify-center group-hover:border-emerald-400 transition-colors cursor-pointer">
+                                <!-- UPDATED: size-3.5 -->
+                                <i data-lucide="check" class="size-3.5 text-emerald-500 opacity-0 group-hover:opacity-100"></i>
+                            </div>
                             <div class="text-left flex-1">
                                 <span class="block text-sm font-bold text-slate-900">Review Landing Page Analytics</span>
                                 <div class="flex items-center mt-1.5 space-x-2">
@@ -1251,12 +1390,17 @@
                                 </div>
                             </div>
                             <div class="text-slate-300 group-hover:text-slate-400 transition-colors">
-                                <i data-lucide="grip-vertical" class="w-5 h-5"></i>
+                                <!-- UPDATED: size-5 -->
+                                <i data-lucide="grip-vertical" class="size-5"></i>
                             </div>
                         </div>
 
-                        <div class="group flex items-center p-4 bg-white border border-slate-200 rounded-xl hover:border-amber-400 transition-all cursor-grab active:cursor-grabbing">
-                            <div class="w-6 h-6 rounded border-2 border-slate-200 mr-4 flex items-center justify-center group-hover:border-amber-400 transition-colors cursor-pointer"></div>
+                        <div class="task-item group flex items-center p-4 bg-white border border-slate-200 rounded-xl hover:border-amber-400 transition-all cursor-grab active:cursor-grabbing" draggable="true">
+                            <!-- UPDATED: size-6 -->
+                            <div class="task-checkbox size-6 rounded border-2 border-slate-200 mr-4 flex items-center justify-center group-hover:border-amber-400 transition-colors cursor-pointer">
+                                <!-- UPDATED: size-3.5 -->
+                                <i data-lucide="check" class="size-3.5 text-amber-500 opacity-0 group-hover:opacity-100"></i>
+                            </div>
                             <div class="text-left flex-1">
                                 <span class="block text-sm font-bold text-slate-900">Draft Product Announcement Tweet</span>
                                 <div class="flex items-center mt-1.5 space-x-2">
@@ -1264,13 +1408,16 @@
                                 </div>
                             </div>
                             <div class="text-slate-300 group-hover:text-slate-400 transition-colors">
-                                <i data-lucide="grip-vertical" class="w-5 h-5"></i>
+                                <!-- UPDATED: size-5 -->
+                                <i data-lucide="grip-vertical" class="size-5"></i>
                             </div>
                         </div>
 
                         <div class="flex items-center p-4 bg-slate-50 border border-slate-100 rounded-xl opacity-50">
-                            <div class="w-6 h-6 rounded bg-slate-300 mr-4 flex items-center justify-center">
-                                <i data-lucide="check" class="w-3.5 h-3.5 text-white"></i>
+                            <!-- UPDATED: size-6 -->
+                            <div class="size-6 rounded bg-slate-300 mr-4 flex items-center justify-center">
+                                <!-- UPDATED: size-3.5 -->
+                                <i data-lucide="check" class="size-3.5 text-white"></i>
                             </div>
                             <div class="text-left flex-1">
                                 <span class="block text-sm font-bold text-slate-500 line-through">Send Weekly Update Email</span>
@@ -1285,7 +1432,8 @@
                          <div class="text-left">
                             <h2 class="text-2xl font-black text-slate-900 tracking-tight mb-2">Strategic Goals</h2>
                             <p class="text-sm font-medium text-slate-500 flex items-center">
-                                <i data-lucide="target" class="w-4 h-4 mr-2 text-indigo-500"></i>
+                                <!-- UPDATED: size-4 -->
+                                <i data-lucide="target" class="size-4 mr-2 text-indigo-500"></i>
                                 <span class="text-slate-600">Q4 Objectives</span>
                             </p>
                         </div>
@@ -1310,7 +1458,7 @@
                                     <span>68%</span>
                                 </div>
                                 <div class="h-2 w-full bg-slate-100 rounded-full overflow-hidden">
-                                    <div class="h-full w-[68%] bg-indigo-500 rounded-full"></div>
+                                    <div class="h-full bg-indigo-500 w-[68%] rounded-full"></div>
                                 </div>
                             </div>
                         </div>
@@ -1343,7 +1491,8 @@
                          <div class="text-left">
                             <h2 class="text-2xl font-black text-slate-900 tracking-tight mb-2">Active Projects</h2>
                             <p class="text-sm font-medium text-slate-500 flex items-center">
-                                <i data-lucide="layers" class="w-4 h-4 mr-2 text-emerald-500"></i>
+                                <!-- UPDATED: size-4 -->
+                                <i data-lucide="layers" class="size-4 mr-2 text-emerald-500"></i>
                                 <span class="text-slate-600">3 In Progress</span>
                             </p>
                         </div>
@@ -1355,10 +1504,13 @@
                     <div class="grid grid-cols-2 gap-4">
                         <div class="p-4 bg-white border border-slate-200 rounded-xl hover:border-indigo-300 transition-colors cursor-pointer flex flex-col h-32 justify-between">
                             <div class="flex justify-between items-start">
-                                <div class="w-8 h-8 rounded-lg bg-indigo-50 flex items-center justify-center text-indigo-600">
-                                    <i data-lucide="globe" class="w-4 h-4"></i>
+                                <!-- UPDATED: size-8 -->
+                                <div class="size-8 rounded-lg bg-indigo-50 flex items-center justify-center text-indigo-600">
+                                    <!-- UPDATED: size-4 -->
+                                    <i data-lucide="globe" class="size-4"></i>
                                 </div>
-                                <i data-lucide="more-horizontal" class="w-4 h-4 text-slate-300"></i>
+                                <!-- UPDATED: size-4 -->
+                                <i data-lucide="more-horizontal" class="size-4 text-slate-300"></i>
                             </div>
                             <div>
                                 <h4 class="font-bold text-slate-900 text-sm">Website Redesign</h4>
@@ -1368,10 +1520,13 @@
 
                          <div class="p-4 bg-white border border-slate-200 rounded-xl hover:border-emerald-300 transition-colors cursor-pointer flex flex-col h-32 justify-between">
                             <div class="flex justify-between items-start">
-                                <div class="w-8 h-8 rounded-lg bg-emerald-50 flex items-center justify-center text-emerald-600">
-                                    <i data-lucide="megaphone" class="w-4 h-4"></i>
+                                <!-- UPDATED: size-8 -->
+                                <div class="size-8 rounded-lg bg-emerald-50 flex items-center justify-center text-emerald-600">
+                                    <!-- UPDATED: size-4 -->
+                                    <i data-lucide="megaphone" class="size-4"></i>
                                 </div>
-                                <i data-lucide="more-horizontal" class="w-4 h-4 text-slate-300"></i>
+                                <!-- UPDATED: size-4 -->
+                                <i data-lucide="more-horizontal" class="size-4 text-slate-300"></i>
                             </div>
                             <div>
                                 <h4 class="font-bold text-slate-900 text-sm">Q3 Marketing</h4>
@@ -1381,10 +1536,13 @@
 
                         <div class="p-4 bg-white border border-slate-200 rounded-xl hover:border-amber-300 transition-colors cursor-pointer flex flex-col h-32 justify-between opacity-75">
                             <div class="flex justify-between items-start">
-                                <div class="w-8 h-8 rounded-lg bg-amber-50 flex items-center justify-center text-amber-600">
-                                    <i data-lucide="users" class="w-4 h-4"></i>
+                                <!-- UPDATED: size-8 -->
+                                <div class="size-8 rounded-lg bg-amber-50 flex items-center justify-center text-amber-600">
+                                    <!-- UPDATED: size-4 -->
+                                    <i data-lucide="users" class="size-4"></i>
                                 </div>
-                                <i data-lucide="more-horizontal" class="w-4 h-4 text-slate-300"></i>
+                                <!-- UPDATED: size-4 -->
+                                <i data-lucide="more-horizontal" class="size-4 text-slate-300"></i>
                             </div>
                             <div>
                                 <h4 class="font-bold text-slate-900 text-sm">Hiring: Growth</h4>
@@ -1404,7 +1562,8 @@
                          <div class="text-left">
                             <h2 class="text-2xl font-black text-slate-900 tracking-tight mb-2">Idea Backlog</h2>
                             <p class="text-sm font-medium text-slate-500 flex items-center">
-                                <i data-lucide="lightbulb" class="w-4 h-4 mr-2 text-amber-500"></i>
+                                <!-- UPDATED: size-4 -->
+                                <i data-lucide="lightbulb" class="size-4 mr-2 text-amber-500"></i>
                                 <span class="text-slate-600">Capture now, execute later</span>
                             </p>
                         </div>
@@ -1412,19 +1571,23 @@
 
                     <div class="space-y-3">
                          <div class="flex items-center p-3 bg-white border border-slate-200 rounded-lg hover:shadow-sm cursor-pointer group">
-                            <div class="w-2 h-2 rounded-full bg-slate-300 mr-3 group-hover:bg-amber-400 transition-colors"></div>
+                            <!-- UPDATED: size-2 -->
+                            <div class="size-2 rounded-full bg-slate-300 mr-3 group-hover:bg-amber-400 transition-colors"></div>
                             <span class="text-sm font-medium text-slate-600">Investigate Stripe Atlas for incorporation</span>
                         </div>
                         <div class="flex items-center p-3 bg-white border border-slate-200 rounded-lg hover:shadow-sm cursor-pointer group">
-                            <div class="w-2 h-2 rounded-full bg-slate-300 mr-3 group-hover:bg-amber-400 transition-colors"></div>
+                            <!-- UPDATED: size-2 -->
+                            <div class="size-2 rounded-full bg-slate-300 mr-3 group-hover:bg-amber-400 transition-colors"></div>
                             <span class="text-sm font-medium text-slate-600">Dark mode implementation for dashboard</span>
                         </div>
                         <div class="flex items-center p-3 bg-white border border-slate-200 rounded-lg hover:shadow-sm cursor-pointer group">
-                            <div class="w-2 h-2 rounded-full bg-slate-300 mr-3 group-hover:bg-amber-400 transition-colors"></div>
+                            <!-- UPDATED: size-2 -->
+                            <div class="size-2 rounded-full bg-slate-300 mr-3 group-hover:bg-amber-400 transition-colors"></div>
                             <span class="text-sm font-medium text-slate-600">Referral program rewards structure</span>
                         </div>
                          <div class="flex items-center p-3 bg-slate-50 border border-slate-200 rounded-lg">
-                             <i data-lucide="plus" class="w-4 h-4 text-slate-400 mr-2"></i>
+                             <!-- UPDATED: size-4 -->
+                             <i data-lucide="plus" class="size-4 text-slate-400 mr-2"></i>
                             <span class="text-sm font-bold text-slate-400">Add new idea...</span>
                         </div>
                     </div>
@@ -1457,8 +1620,96 @@
             if (heroViews[viewName]) {
                 container.innerHTML = heroViews[viewName];
                 lucide.createIcons(); // Re-render icons for new content
+                
+                // Re-initialize drag and drop logic if switching back to focus view
+                if(viewName === 'focus') {
+                    initHeroInteractions();
+                }
             }
         }
+
+        // --- NEW: Hero Interaction Logic (Drag & Drop + Checkboxes) ---
+        function initHeroInteractions() {
+            const taskList = document.getElementById('hero-focus-task-list');
+            if (!taskList) return;
+
+            const taskItems = taskList.querySelectorAll('.task-item');
+            
+            // Drag and Drop
+            taskItems.forEach(item => {
+                item.addEventListener('dragstart', () => {
+                    item.classList.add('dragging');
+                });
+                item.addEventListener('dragend', () => {
+                    item.classList.remove('dragging');
+                });
+            });
+
+            taskList.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                const afterElement = getDragAfterElement(taskList, e.clientY);
+                const draggable = document.querySelector('.dragging');
+                if (draggable) {
+                     if (afterElement == null) {
+                        taskList.appendChild(draggable);
+                    } else {
+                        taskList.insertBefore(draggable, afterElement);
+                    }
+                }
+            });
+
+            // Checkbox
+            const checkboxes = taskList.querySelectorAll('.task-checkbox');
+            checkboxes.forEach(box => {
+                box.addEventListener('click', (e) => {
+                    e.stopPropagation(); // prevent drag if wrapper is draggable
+                    const taskItem = box.closest('.task-item');
+                    completeTask(taskItem);
+                });
+            });
+        }
+
+        function getDragAfterElement(container, y) {
+            const draggableElements = [...container.querySelectorAll('.task-item:not(.dragging)')];
+
+            return draggableElements.reduce((closest, child) => {
+                const box = child.getBoundingClientRect();
+                const offset = y - box.top - box.height / 2;
+                if (offset < 0 && offset > closest.offset) {
+                    return { offset: offset, element: child };
+                } else {
+                    return closest;
+                }
+            }, { offset: Number.NEGATIVE_INFINITY }).element;
+        }
+
+        function completeTask(taskItem) {
+            if (!taskItem) return;
+            
+            // Extract Title
+            const titleEl = taskItem.querySelector('.text-sm.font-bold');
+            const title = titleEl ? titleEl.textContent : "Completed Task";
+
+            // Create Done HTML
+            // UPDATED: size-6, size-3.5
+            const doneHTML = `
+                <div class="flex items-center p-4 bg-slate-50 border border-slate-100 rounded-xl opacity-50 fade-in-view">
+                    <div class="size-6 rounded bg-slate-300 mr-4 flex items-center justify-center">
+                        <i data-lucide="check" class="size-3.5 text-white"></i>
+                    </div>
+                    <div class="text-left flex-1">
+                        <span class="block text-sm font-bold text-slate-500 line-through">${title}</span>
+                    </div>
+                </div>
+            `;
+
+            // Replace element
+            taskItem.outerHTML = doneHTML;
+            lucide.createIcons();
+        }
+
+        // Initialize interactions on load
+        document.addEventListener('DOMContentLoaded', initHeroInteractions);
 
         // --- END NEW CODE ---
 
@@ -1484,8 +1735,9 @@
                             </div>
                             <div class="flex items-center justify-between">
                                 <div class="flex -space-x-2">
-                                    <div class="w-8 h-8 rounded-full bg-indigo-100 border-2 border-white flex items-center justify-center text-[10px] font-bold text-indigo-600">Q3</div>
-                                    <div class="w-8 h-8 rounded-full bg-emerald-100 border-2 border-white flex items-center justify-center text-[10px] font-bold text-emerald-600">Q4</div>
+                                    <!-- UPDATED: size-8 -->
+                                    <div class="size-8 rounded-full bg-indigo-100 border-2 border-white flex items-center justify-center text-[10px] font-bold text-indigo-600">Q3</div>
+                                    <div class="size-8 rounded-full bg-emerald-100 border-2 border-white flex items-center justify-center text-[10px] font-bold text-emerald-600">Q4</div>
                                 </div>
                                 <span class="text-xs font-bold text-slate-400">Due Dec 31</span>
                             </div>
@@ -1502,19 +1754,22 @@
                         <h3 class="text-2xl font-black text-slate-900 leading-tight mb-6">Launch Beta Version to First 100 Users</h3>
                         <div class="space-y-4">
                              <div class="flex items-center space-x-2 text-xs font-bold text-indigo-600 bg-indigo-50 border border-indigo-100 p-2 rounded-lg w-fit">
-                                <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+                                <!-- UPDATED: size-3 -->
+                                <i data-lucide="arrow-up-right" class="size-3"></i>
                                 <span>Goal: Scale to $200k</span>
                             </div>
                             <div class="bg-white p-3 rounded-lg border border-slate-200 shadow-sm flex items-center justify-between">
                                 <div class="flex items-center space-x-3">
-                                    <div class="w-2 h-2 rounded-full bg-emerald-500"></div>
+                                    <!-- UPDATED: size-2 -->
+                                    <div class="size-2 rounded-full bg-emerald-500"></div>
                                     <span class="text-sm font-bold text-slate-700">Landing Page</span>
                                 </div>
                                 <span class="text-xs font-bold text-slate-400">Done</span>
                             </div>
                             <div class="bg-white p-3 rounded-lg border border-slate-200 shadow-sm flex items-center justify-between">
                                 <div class="flex items-center space-x-3">
-                                    <div class="w-2 h-2 rounded-full bg-emerald-500"></div>
+                                    <!-- UPDATED: size-2 -->
+                                    <div class="size-2 rounded-full bg-emerald-500"></div>
                                     <span class="text-sm font-bold text-slate-700">Email Sequence</span>
                                 </div>
                                 <span class="text-xs font-bold text-emerald-600">In Progress</span>
@@ -1532,7 +1787,8 @@
                         <h3 class="text-2xl font-black text-slate-900 leading-tight mb-6">Record 2-minute product walkthrough video</h3>
                          <div class="space-y-4">
                              <div class="flex items-center space-x-2 text-xs font-bold text-emerald-600 bg-emerald-50 border border-emerald-100 p-2 rounded-lg w-fit">
-                                <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+                                <!-- UPDATED: size-3 -->
+                                <i data-lucide="arrow-up-right" class="size-3"></i>
                                 <span>Project: Launch Beta</span>
                             </div>
                             <div class="grid grid-cols-2 gap-4">
@@ -1560,8 +1816,9 @@
                             <div class="p-4 bg-purple-50 border border-purple-100 rounded-xl text-purple-800 text-sm font-medium italic">
                                 "Saw that Competitor X did this and got 20% lift. Check LemonSqueezy docs for affiliate implementation."
                             </div>
-                            <button class="w-full py-3 bg-white border border-slate-200 rounded-lg text-sm font-bold text-slate-500 hover:text-indigo-600 hover:border-indigo-200 transition-colors flex items-center justify-center">
-                                <i data-lucide="arrow-up-circle" class="w-4 h-4 mr-2"></i>
+                            <button class="w-full py-3 bg-white border border-slate-200 rounded-lg text-sm font-bold text-slate-500 hover:text-indigo-600 hover:border-indigo-200 transition-colors flex items-center justify-center cursor-pointer">
+                                <!-- UPDATED: size-4 -->
+                                <i data-lucide="arrow-up-circle" class="size-4 mr-2"></i>
                                 Promote to Project
                             </button>
                         </div>
@@ -1577,15 +1834,18 @@
                         <h3 class="text-2xl font-black text-slate-900 leading-tight mb-6">Pay server invoice before 5pm</h3>
                         <div class="space-y-2">
                             <div class="flex items-center p-3 bg-white border border-slate-200 rounded-lg opacity-50">
-                                <div class="w-4 h-4 rounded border-2 border-slate-300 mr-3"></div>
+                                <!-- UPDATED: size-4 -->
+                                <div class="size-4 rounded border-2 border-slate-300 mr-3"></div>
                                 <span class="text-sm font-bold text-slate-400 line-through">Call Accountant</span>
                             </div>
                             <div class="flex items-center p-3 bg-white border border-rose-200 rounded-lg shadow-sm">
-                                <div class="w-4 h-4 rounded border-2 border-rose-500 mr-3"></div>
+                                <!-- UPDATED: size-4 -->
+                                <div class="size-4 rounded border-2 border-rose-500 mr-3"></div>
                                 <span class="text-sm font-bold text-slate-900">Pay Server Invoice</span>
                             </div>
                              <div class="flex items-center p-3 bg-white border border-slate-200 rounded-lg opacity-50">
-                                <div class="w-4 h-4 rounded border-2 border-slate-300 mr-3"></div>
+                                <!-- UPDATED: size-4 -->
+                                <div class="size-4 rounded border-2 border-slate-300 mr-3"></div>
                                 <span class="text-sm font-bold text-slate-400 line-through">Book Flights</span>
                             </div>
                         </div>
@@ -1623,7 +1883,8 @@
                     if(chevron) chevron.style.opacity = '0';
 
                     // CHANGED: Reset Icon Box to Slate
-                    const iconBox = innerDiv.querySelector('.w-10.h-10');
+                    // UPDATED: size-10
+                    const iconBox = innerDiv.querySelector('.size-10');
                     const icon = iconBox.querySelector('i'); // Get the lucide icon inside
                     const iLevel = i.getAttribute('data-level');
                     const iData = hierarchyData[iLevel];
@@ -1657,7 +1918,8 @@
                 if(chevron) chevron.style.opacity = '1';
 
                 // CHANGED: Activate Icon Box (Swap Slate for Color)
-                const activeIconBox = innerDiv.querySelector('.w-10.h-10');
+                // UPDATED: size-10
+                const activeIconBox = innerDiv.querySelector('.size-10');
                 const activeIcon = activeIconBox.querySelector('i');
 
                 activeIconBox.classList.remove('bg-slate-800');
